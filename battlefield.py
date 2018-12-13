@@ -1,11 +1,6 @@
 from full_minimax import Bot as Bot1 , Board
 from random import shuffle,choice
 
-class RandomBot(Bot1):
-	def get_move(self):
-		move = choice(self.board.get_legal_moves())
-		self.board.play_move(move,self.color)
-		return move
 
 X = 1
 O = 2
@@ -37,7 +32,3 @@ def contest(bot1,bot2,rounds):
 			
 
 	print("Score( {} - {} ): {} - {} , {} ties".format(bots[0][1],bots[1][1],bots[0][2],bots[1][2],rounds-bots[0][2]-bots[1][2]))
-
-b1 = (Bot1(X),"New bot")
-b2 = (RandomBot(O),"RandomBot")
-contest(b1,b2,100)
